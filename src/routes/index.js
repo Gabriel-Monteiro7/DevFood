@@ -3,7 +3,7 @@ import React from "react";
 import Receitas from "../pages/receitas";
 import Descricao from "../pages/descricao";
 import MinhasReceitas from "../pages/minhasReceitas";
-
+import AdicionarReceitas from "../pages/adicionarReceita";
 export default function Routes(props) {
   return (
     <Switch>
@@ -14,6 +14,9 @@ export default function Routes(props) {
         {props.children}
       </Route>
       <Route path="/descricao" component={Descricao} exact>
+        {props.children}
+      </Route>
+      <Route path="/adicionar-receita" component={AdicionarReceitas} exact>
         {props.children}
       </Route>
       <Route path="*">
