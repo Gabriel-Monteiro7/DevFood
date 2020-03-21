@@ -16,7 +16,9 @@ export const GlobalStyle = createGlobalStyle`
     padding:0px;
     outline:0px;
     box-sizing:border-box;
+
     html,body,#root{
+        background: #EDEDED;
         margin:0px;
         font-family: sans-serif;
         min-height:100%;
