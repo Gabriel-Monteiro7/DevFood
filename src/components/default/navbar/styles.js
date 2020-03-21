@@ -6,12 +6,12 @@ export default styled.nav`
   background: #f58324 !important;
   width: 100%;
   border-bottom: 10px #267d9a solid;
-  padding: 15px 0px;
+  padding: 12px 0px;
   a,
   .navbar-toggler {
     color: white;
     &:hover {
-      color:white;
+      color: white;
     }
   }
   .nav-item {

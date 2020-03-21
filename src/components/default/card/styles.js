@@ -45,7 +45,7 @@ export const Body = styled.div`
     &:hover {
       color: #f58324;
       text-decoration: underline;
-      opacity:0.8;
+      opacity: 0.8;
     }
   }
   p {
@@ -58,4 +58,38 @@ export const Body = styled.div`
       font-size: 11px;
     }
   }
+`;
+export const CardDescricao = styled.div`
+  background: white;
+  width: 75%;
+  margin: auto;
+  @media (max-width: ${md}px) {
+    font-size: 12px;
+    p {
+      font-size: 11px;
+    }
+  }
+`;
+export const BodyDescricao = styled.div`
+  padding: 20px 0px;
+  color: #267d9a;
+  height: 50%;
+  width: 45%;
+  margin-top: 20px;
+  margin-left: 80px;
+  span {
+    font-weight: bold;
+    font-size: 25px;
+    color: #f58324;
+  }
+  @media (max-width: ${md}px) {
+    font-size: 12px;
+    p {
+      font-size: 11px;
+    }
+  }
+`;
+export const ImagemDescricao = styled(Imagem)`
+  border-radius: 0px;
+  height: 300px;
 `;
