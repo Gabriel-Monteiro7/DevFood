@@ -21,7 +21,7 @@ export const GlobalStyle = createGlobalStyle`
         background: #EDEDED;
         margin:0px;
         font-family: sans-serif;
-        min-height:100%;
+        min-height:100vh;
         .btn,a,button{
         
         cursor: pointer;
