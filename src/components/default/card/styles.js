@@ -3,7 +3,7 @@ import {} from "styled-components";
 import { md, sm } from "../../../styles/global";
 
 export const StylesCard = styled.div`
-  border-radius: 10px;
+  border-radius: 8px;
   width: 380px;
   background: white;
   height: 300px;
@@ -16,7 +16,7 @@ export const StylesCard = styled.div`
 export const Imagem = styled.div`
   background-image: url(https://blog.novasafra.com.br/wp-content/uploads/2018/03/comida-arabe-780x450.jpg);
   height: 40%;
-  border-radius: 7px 7px 0px 0px;
+  border-radius: 8px 8px 0px 0px;
   padding: 2px 15px;
   color: white;
   display: flex;
@@ -41,7 +41,7 @@ export const Body = styled.div`
   }
   a {
     text-decoration: underline;
-    text-align: end;
+    margin: 0px 0px 0px auto;
     &:hover {
       color: #f58324;
       text-decoration: underline;
@@ -63,11 +63,8 @@ export const CardDescricao = styled.div`
   background: white;
   width: 75%;
   margin: auto;
-  @media (max-width: ${md}px) {
-    font-size: 12px;
-    p {
-      font-size: 11px;
-    }
+  @media (max-width: ${sm}px) {
+    width: 100%;
   }
 `;
 export const BodyDescricao = styled.div`
@@ -77,12 +74,16 @@ export const BodyDescricao = styled.div`
   width: 45%;
   margin-top: 20px;
   margin-left: 80px;
+
   span {
     font-weight: bold;
     font-size: 25px;
     color: #f58324;
   }
   @media (max-width: ${md}px) {
+    margin: 0px;
+    width: 65%;
+    padding-left: 10px;
     font-size: 12px;
     p {
       font-size: 11px;
@@ -92,4 +93,31 @@ export const BodyDescricao = styled.div`
 export const ImagemDescricao = styled(Imagem)`
   border-radius: 0px;
   height: 300px;
+  @media (max-width: ${md}px) {
+    height: 170px;
+  }
+`;
+export const BodyNewCard = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  flex-direction: column;
+  color: #f58324;
+  a {
+    margin: 10px 0px;
+    font-size: 20px;
+    text-decoration: underline;
+    &:hover {
+      color: #f58324;
+      text-decoration: underline;
+      opacity: 0.8;
+    }
+  }
+  @media (max-width: ${md}px) {
+    font-size: 12px;
+    p {
+      font-size: 11px;
+    }
+  }
 `;

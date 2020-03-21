@@ -14,7 +14,7 @@ function App() {
     // <PersistGate persistor={persistor}>
     <Router history={history}>
       <NavBar />
-      <div className="container-fluid px-5">
+      <div className="container-fluid px-md-5 px-2">
         <Routes />
       </div>
       <GlobalStyle />
