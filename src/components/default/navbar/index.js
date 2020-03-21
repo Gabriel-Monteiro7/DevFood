@@ -1,5 +1,5 @@
 import React from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import StylesNavBar from "./styles";
 import { FaBars, FaCanadianMapleLeaf } from "react-icons/all";
@@ -26,31 +26,31 @@ export default function NavBar() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav w-100">
             <li className="nav-item">
-              <a className="nav-link" to="/">
+              <Link className="nav-link" to="/receitas">
                 Receitas
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" to="/cadastro">
+              <Link className="nav-link" to="/minhas-receitas">
                 Minhas receitas
-              </a>
+              </Link>
             </li>
 
             <li className="nav-item">
-              <a className="nav-link " to="/cadastro">
+              <Link className="nav-link " to="/adicionar-receita">
                 Adicionar receitas
-              </a>
+              </Link>
             </li>
 
             <li className="nav-item user">
-              <a className="nav-link" to="/cadastro">
+              <Link className="nav-link" to="/receitas">
                 Nome da Silva
-              </a>
-              <img src='https://receitas.devari.com.br/docs/user/DEVfood_user2_h1pK2NU.jpg'/>
+              </Link>
+              <img src="https://receitas.devari.com.br/docs/user/DEVfood_user2_h1pK2NU.jpg" />
               <hr />
-              <a className="nav-link" to="/cadastro">
+              <Link className="nav-link" to="/">
                 Sair
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
