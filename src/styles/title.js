@@ -13,4 +13,15 @@ export default styled.div`
   span {
     color: #f58324;
   }
+  .voltar {
+    cursor: pointer;
+    color: #267d9a;
+    font-size: 11px;
+    position: absolute;
+    left: 49px;
+    top: 20px;
+    svg {
+      margin: 0px 5px;
+    }
+  }
 `;

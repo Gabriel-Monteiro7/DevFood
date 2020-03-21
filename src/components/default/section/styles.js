@@ -4,7 +4,7 @@ import { lg, xl } from "../../../styles/global";
 
 export default styled.div`
   /* min-height: 100vh; */
-  padding: 100px 0px 20px 0px;
+  padding: 115px 0px 20px 0px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
