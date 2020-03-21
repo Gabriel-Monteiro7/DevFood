@@ -17,7 +17,7 @@ export default styled.nav`
   .nav-item {
     font-weight: bold;
     transition: 0.3s ease-in-out;
-    
+    margin: 0px 3px;
   }
   .navbar-brand {
     font-size: 25px;
