@@ -19,6 +19,9 @@ export default styled.div`
     font-size: 11px;
     position: absolute;
     left: 49px;
+    @media (max-width: ${sm}px) {
+      left: 0.5rem;
+    }
     top: 20px;
     svg {
       margin: 0px 5px;

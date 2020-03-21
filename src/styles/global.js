@@ -28,8 +28,7 @@ export const GlobalStyle = createGlobalStyle`
     }
     .btn,button{
         outline:none;
-        background:transparent;
-        border-radius:3px;
+        border-radius:5px;
     }
     }
     body{
