@@ -1,15 +1,37 @@
 import React from "react";
+import { FaBars } from "react-icons/all";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-
+import { singOut } from "../../../store/modules/auth/actions";
+import { getOneRequest } from "../../../store/modules/recipe/actions";
 import StylesNavBar from "./styles";
-import { FaBars, FaCanadianMapleLeaf } from "react-icons/all";
+import swal from 'sweetalert';
+
 export default function NavBar() {
+  let { user } = useSelector(state => state.user);
+  let { signed, token } = useSelector(state => state.auth);
+  const dispatch = useDispatch();
+  function handleSingOut() {
+    swal({
+      title: "Tem certeza que deseja Sair ?",
+      buttons:{Cancelar:true,Descartar:"Sair"},
+    })
+    .then((willDelete) => {
+      if (willDelete === "Sair") {
+        dispatch(singOut());
+      }
+    });
+    
+  }
+  function handleGetOne(token, id) {
+    dispatch(getOneRequest(token, id));
+  }
   return (
     <StylesNavBar className="navbar navbar-expand-lg">
       <div className="container-fluid px-md-5 px-2">
-        <a className="navbar-brand" to="/">
+        <span className="navbar-brand" to="/">
           <span>DEV</span>food
-        </a>
+        </span>
         <button
           className="navbar-toggler align-self-end"
           type="button"
@@ -23,37 +45,42 @@ export default function NavBar() {
             <FaBars />
           </span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav w-100">
-            <li className="nav-item">
-              <Link className="nav-link" to="/receitas">
-                Receitas
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/minhas-receitas">
-                Minhas receitas
-              </Link>
-            </li>
+        {signed && (
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav w-100">
+              <li className="nav-item">
+                <Link className="nav-link" to="/receitas">
+                  Receitas
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/minhas-receitas">
+                  Minhas receitas
+                </Link>
+              </li>
 
-            <li className="nav-item">
-              <Link className="nav-link " to="/adicionar-receita">
-                Adicionar receitas
-              </Link>
-            </li>
+              <li className="nav-item">
+                <span
+                  className="nav-link btn-event"
+                  onClick={() => {
+                    handleGetOne(token, null);
+                  }}
+                >
+                  Adicionar receitas
+                </span>
+              </li>
 
-            <li className="nav-item user">
-              <Link className="nav-link" to="/receitas">
-                Nome da Silva
-              </Link>
-              <img src="https://receitas.devari.com.br/docs/user/DEVfood_user2_h1pK2NU.jpg" />
-              <hr />
-              <Link className="nav-link" to="/">
-                Sair
-              </Link>
-            </li>
-          </ul>
-        </div>
+              <li className="nav-item user">
+                <span className="nav-link">{user.name}</span>
+                <img alt="Avatar do usuario" src={user.image} />
+                <hr />
+                <span className="nav-link btn-event" onClick={handleSingOut}>
+                  Sair
+                </span>
+              </li>
+            </ul>
+          </div>
+        )}
       </div>
     </StylesNavBar>
   );

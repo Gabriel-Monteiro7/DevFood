@@ -27,4 +27,12 @@ export default styled.div`
       margin: 0px 5px;
     }
   }
+  .descricao {
+    @media (max-width: ${sm}px) {
+      margin: auto;
+      font-size: 11px;
+      width: 70%;
+      display: inherit;
+    }
+  }
 `;

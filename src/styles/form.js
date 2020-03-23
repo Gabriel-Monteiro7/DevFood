@@ -4,6 +4,7 @@ import { darken } from "polished";
 import { lg, md, sm, xl } from "./global";
 
 export const StyleForm = styled(Form)`
+  position: relative;
   background: white !important;
   /* border-radius: 8px; */
   padding: 20px;
@@ -83,9 +84,15 @@ export const StyleForm = styled(Form)`
       padding: 20px 0px;
     }
   }
-  svg{
-    position:absolute;
-    right:35px;
-    top:13px;
+  svg {
+    position: absolute;
+    right: 35px;
+    top: 13px;
   }
+  .btn-delete {
+    right: 20px;
+    font-size: 27px;
+    cursor: pointer;
+  }
+  
 `;
