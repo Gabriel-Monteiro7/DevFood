@@ -20,15 +20,18 @@ usuário, pode:
 (gerenciamento de estado, componentes prontos, navegação, etc).
 
 Resumindo, você precisa para completar o desafio:
- 1. Criar a interface proposta baseada no link do protótipo
+ 1. Criar a interface proposta baseada no link do 
+protótipo
  2. Desenvolver as seguintes funcionalidades:
+	
 		2.1. Autenticação
     	2.2. Logout
     	2.3. Listar receitas
     	2.4. Criar receita
     	2.5. Editar receita
     	2.6. Deletar receita
-    	2.7. Listar minhas receitas Por fim, vale ressaltar que a aplicação deve ser desenvolvida em ​ react js ​ e o código deve ser colocado no ​ github ​ .
+    	2.7. Listar minhas receitas 
+    Por fim, vale ressaltar que a aplicação deve ser desenvolvida em ​ react js ​ e o código deve ser colocado no ​ github ​ .
 
 ## Comentários
 
