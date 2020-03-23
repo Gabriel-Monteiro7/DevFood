@@ -38,7 +38,7 @@ export default function Routes(props) {
         {props.children}
       </Route>
       <Route path="*">
-        <Redirect to="/" />
+        <Redirect to="/receitas" />
       </Route>
     </Switch>
   );

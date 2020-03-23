@@ -16,7 +16,7 @@ export default function RouteWrapper({
   }
   if (signed && !isPrivate) {
     return <Redirect to="/receitas" />;
-  } else if (signed && selectedRecipe === null && description) {
+  } else if (selectedRecipe === null && description) {
     return <Redirect to="/receitas" />;
   }
   return <Route {...rest} render={props => <Component {...props} />} />;

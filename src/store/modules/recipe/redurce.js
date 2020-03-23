@@ -2,7 +2,7 @@ import produce from "immer";
 const INITIAL_STATE = {
   recipes: [],
   myRecipes: [],
-  selectedRecipe: {}
+  selectedRecipe: null
 };
 
 export default function user(state = INITIAL_STATE, action) {
