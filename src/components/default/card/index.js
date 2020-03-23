@@ -1,7 +1,6 @@
 import React from "react";
 
 import { StylesCard, Imagem, Body, BodyNewCard } from "./styles";
-import { Link } from "react-router-dom";
 import { FaPlus } from "react-icons/all";
 import { useDispatch, useSelector } from "react-redux";
 import { getOneRequest } from "../../../store/modules/recipe/actions";

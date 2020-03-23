@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 
 import Title from "../../styles/title";
 import Section from "../../components/default/section/SectionDefault";
@@ -12,7 +12,8 @@ export default function Receitas() {
   const { recipes } = useSelector(state => state.recipe);
   useEffect(() => {
     dispatch(getAllRequest(token));
-  }, [dispatch, token]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return (
     <>
       <Title>
@@ -25,13 +26,9 @@ export default function Receitas() {
               page={"receitas"}
               key={indice}
               id={recipe.id}
-              description={
-                recipe.description
-              }
+              description={recipe.description}
               category={recipe.category}
-              title={
-                recipe.title
-              }
+              title={recipe.title}
             />
           );
         })}

@@ -2,7 +2,6 @@ import React from "react";
 import { Input } from "@rocketseat/unform";
 import * as Yup from "yup";
 import { StyleForm } from "../../styles/formLogin";
-import uuid from "react-uuid";
 import { singInRequest } from "../../store/modules/auth/actions";
 import { useDispatch, useSelector } from "react-redux";
 let schema = Yup.object().shape({
@@ -13,8 +12,7 @@ let schema = Yup.object().shape({
 });
 
 export default function Form({ email, senha }) {
-  let { user } = useSelector(state => state.user);
-  let { signed,loading  } = useSelector(state => state.auth);
+  let { loading } = useSelector(state => state.auth);
   const dispatch = useDispatch();
   function handleSubmit({ email, senha }, { resetForm }) {
     dispatch(singInRequest(email, senha));

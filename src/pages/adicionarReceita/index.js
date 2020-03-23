@@ -10,9 +10,9 @@ export default function AdicionarReceita() {
   function handleBack() {
     swal({
       title: "Tem certeza que deseja Descartar?",
-      buttons: { Cancelar: true, Descartar: "Descartar" }
+      buttons: { false: "Cancelar", true: "Descartar" }
     }).then(willDelete => {
-      if (willDelete === "Descartar") {
+      if (willDelete === "true") {
         history.goBack();
       }
     });

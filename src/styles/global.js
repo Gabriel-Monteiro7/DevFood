@@ -65,13 +65,13 @@ export const GlobalStyle = createGlobalStyle`
         background: transparent;
       }
     }
-    .swal-button--Descartar {
+    .swal-button--true {
       color: #6e6e6e;
       &:hover{
         color: #6e6e6e;
       }
     }
-    .swal-button--Cancelar {
+    .swal-button--false {
 
         color: #f58324;
     &:hover,&:active{

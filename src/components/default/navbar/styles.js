@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { sm, md } from "../../../styles/global";
+import { md } from "../../../styles/global";
 
 export default styled.nav`
   z-index: 1;
@@ -8,7 +8,8 @@ export default styled.nav`
   border-bottom: 10px #267d9a solid;
   padding: 12px 0px;
   a,
-  .navbar-toggler,.nav-link {
+  .navbar-toggler,
+  .nav-link {
     color: white;
     &:hover {
       color: white;
@@ -19,10 +20,11 @@ export default styled.nav`
     transition: 0.3s ease-in-out;
     margin: 0px 3px;
   }
-  .btn-event,a{
-    cursor:pointer;
-    &:hover{
-      opacity:0.9;
+  .btn-event,
+  a {
+    cursor: pointer;
+    &:hover {
+      opacity: 0.9;
     }
   }
   .navbar-brand {

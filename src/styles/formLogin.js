@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Form } from "@rocketseat/unform";
 import { darken } from "polished";
-import { lg, md, sm, xl } from "./global";
+import { sm } from "./global";
 
 export const StyleForm = styled(Form)`
   background: white !important;
