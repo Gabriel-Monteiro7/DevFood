@@ -12,7 +12,9 @@ import {
 import { StyleForm } from "../../styles/form";
 import swal from "sweetalert";
 let schema = Yup.object().shape({
-  title: Yup.string().required("Campo obrigatório"),
+  title: Yup.string()
+    .max(100)
+    .required("Campo obrigatório"),
   description: Yup.string().required("Campo obrigatório")
 });
 export default function Form() {
@@ -55,8 +57,8 @@ export default function Form() {
   }
   function handleDelete() {
     swal({
-      title: "Tem certeza que deseja Excluir ?",
-      buttons: { false: "Cancelar", true: "Excluir" }
+      title: "Tem certeza que deseja excluir ?",
+      buttons: { false: "Cancelar", true: "excluir" }
     }).then(willDelete => {
       if (willDelete === "true") {
         dispatch(deleteRecipeRequest(token, selectedRecipe));
@@ -108,7 +110,11 @@ export default function Form() {
             placeholder={``}
           />
         </div>
-        <button type="submit">Criar Receita</button>
+        <button type="submit">
+          {selectedRecipe.user !== undefined
+            ? "Atualizar Receita"
+            : "Criar Receita"}
+        </button>
       </div>
     </StyleForm>
   );

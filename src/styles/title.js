@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { sm } from "./global";
 
 export default styled.div`
+  word-break: break-all;
   background: white;
   text-align: center;
   left: 0px;
@@ -28,11 +29,12 @@ export default styled.div`
     }
   }
   .descricao {
+    margin: auto;
+    width: 75%;
+    display: inherit;
     @media (max-width: ${sm}px) {
-      margin: auto;
       font-size: 11px;
-      width: 70%;
-      display: inherit;
+      width: 65%;
     }
   }
 `;

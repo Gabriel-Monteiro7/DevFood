@@ -13,8 +13,8 @@ export default function NavBar() {
   const dispatch = useDispatch();
   function handleSingOut() {
     swal({
-      title: "Tem certeza que deseja Sair ?",
-      buttons: { false: "Cancelar", true: "Sair" }
+      title: "Tem certeza que deseja sair ?",
+      buttons: { false: "Cancelar", true: "sair" }
     }).then(willDelete => {
       if (willDelete === "true") {
         dispatch(singOut());
@@ -27,9 +27,9 @@ export default function NavBar() {
   return (
     <StylesNavBar className="navbar navbar-expand-lg">
       <div className="container-fluid px-md-5 px-2">
-        <span className="navbar-brand" to="/">
+        <Link className="navbar-brand" to="/receitas">
           <span>DEV</span>food
-        </span>
+        </Link>
         <button
           className="navbar-toggler align-self-end"
           type="button"
@@ -53,7 +53,7 @@ export default function NavBar() {
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/minhas-receitas">
-                  Minhas receitas
+                  Minhas Receitas
                 </Link>
               </li>
 
@@ -64,7 +64,7 @@ export default function NavBar() {
                     handleGetOne(token, null);
                   }}
                 >
-                  Adicionar receitas
+                  Adicionar Receitas
                 </span>
               </li>
 

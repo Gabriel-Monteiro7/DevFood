@@ -8,6 +8,7 @@ import { persistor, store } from "./store";
 import { GlobalStyle } from "./styles/global";
 import history from "./service/history";
 import { ToastContainer } from "react-toastify";
+import ButtonTop from "./components/default/ButtonTop";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <div className="container-fluid px-md-5 px-2">
             <Routes />
           </div>
+          <ButtonTop />
           <GlobalStyle />
           <ToastContainer autoClose={3000} />
         </Router>
