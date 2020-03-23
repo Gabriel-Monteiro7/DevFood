@@ -1,6 +1,9 @@
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Redirect } from "react-router-dom";
 import React from "react";
+import Route from "./Route";
+
 import Receitas from "../pages/receitas";
+
 import Descricao from "../pages/descricao";
 import MinhasReceitas from "../pages/minhasReceitas";
 import AdicionarReceitas from "../pages/adicionarReceita";
@@ -11,16 +14,16 @@ export default function Routes(props) {
       <Route path="/" component={Login} exact>
         {props.children}
       </Route>
-      <Route path="/receitas" component={Receitas} exact>
+      <Route path="/receitas" component={Receitas} exact isPrivate>
         {props.children}
       </Route>
-      <Route path="/minhas-receitas" component={MinhasReceitas} exact>
+      <Route path="/minhas-receitas" component={MinhasReceitas} exact isPrivate>
         {props.children}
       </Route>
-      <Route path="/descricao" component={Descricao} exact>
+      <Route path="/descricao" component={Descricao} exact isPrivate description = {true}>
         {props.children}
       </Route>
-      <Route path="/adicionar-receita" component={AdicionarReceitas} exact>
+      <Route path="/adicionar-receita" component={AdicionarReceitas} exact isPrivate>
         {props.children}
       </Route>
       <Route path="*">
