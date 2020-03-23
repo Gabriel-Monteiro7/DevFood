@@ -33,13 +33,15 @@ export default function Card({
         </BodyNewCard>
       ) : (
         <>
-          <Imagem image={`url(${category.image})`}>
+          <Imagem image={category.image}>
             <span>
               {title.length > 70 ? title.substring(0, 70) + "..." : title}
             </span>
           </Imagem>
           <Body>
-            <span className="categoria">{category.name}</span>
+            <span className="categoria">
+              {category === "" ? "Sem categoria" : category.name}
+            </span>
             <p>
               {description.length > 200
                 ? description.substring(0, 205) + "..."

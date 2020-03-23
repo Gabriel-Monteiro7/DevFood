@@ -1,4 +1,4 @@
-import { Input, Select } from "@rocketseat/unform";
+import { Input } from "@rocketseat/unform";
 import React, { useEffect, useState } from "react";
 import { FaCaretDown, GoTrashcan } from "react-icons/all";
 import { useDispatch, useSelector } from "react-redux";
@@ -19,6 +19,7 @@ export default function Form() {
   let { token } = useSelector(state => state.auth);
   let { user } = useSelector(state => state.user);
   let { selectedRecipe } = useSelector(state => state.recipe);
+  selectedRecipe = selectedRecipe === null ? {} : selectedRecipe;
   const [category, setCategory] = useState(
     selectedRecipe.category !== undefined ? selectedRecipe.category.id : ""
   );

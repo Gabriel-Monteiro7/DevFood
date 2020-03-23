@@ -32,7 +32,7 @@ export default function Descricao() {
       </Title>
       <Section>
         <CardDescricao>
-          <ImagemDescricao image={`url(${category.image || ""})`} />
+          <ImagemDescricao image={category.image || ""} />
           <BodyDescricao>
             <span>Descrição</span>
             <p>{description}</p>

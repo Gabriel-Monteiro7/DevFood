@@ -27,7 +27,8 @@ export function* getOne({ payload }) {
   try {
     const { token, id } = payload;
     if (id === null) {
-      yield put(getOneSuccess({}));
+      if (history.location.pathname !== "/adicionar-receita")
+        yield put(getOneSuccess(null));
       return history.push("/adicionar-receita");
     }
     const { data } = yield call(api.apiRecipe.get, "recipe/" + id.value, {
@@ -85,7 +86,7 @@ export function* deleteRecipe({ payload }) {
       headers: { Authorization: "Token " + token }
     });
     yield put(deleteRecipeSuccess(data));
-    yield put(getOneSuccess({}));
+    yield put(getOneSuccess(null));
     history.push("/minhas-receitas");
   } catch (erro) {
     toast.error("Erro na requisição");

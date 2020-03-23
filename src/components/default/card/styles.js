@@ -7,8 +7,8 @@ export const StylesCard = styled.div`
   width: 380px;
   background: white;
   height: 300px;
-  margin:20px 40px 20px 0px;
-  
+  margin: 20px 40px 20px 0px;
+
   @media (max-width: ${md}px) {
     margin: 20px 0px;
     width: 260px;
@@ -16,7 +16,8 @@ export const StylesCard = styled.div`
   }
 `;
 export const Imagem = styled.div`
-  background-image: ${props => (props.image !== undefined ? props.image : "")};
+  background: ${props =>
+    props.image !== undefined ? `url(${props.image})` : "#424242"};
   background-size: cover;
   background-position: center;
   height: 40%;
@@ -33,16 +34,17 @@ export const Body = styled.div`
   height: 60%;
   color: #267d9a;
   .categoria,
-  a,.link{
+  a,
+  .link {
     color: #f58324;
   }
-  .categoria{
+  .categoria {
     font-weight: bold;
     /* font-size; */
   }
-  
+
   p {
-    height:70%;
+    height: 70%;
     font-size: 15px;
     margin: 0px;
   }
@@ -57,7 +59,7 @@ export const CardDescricao = styled.div`
   background: white;
   width: 75%;
   margin: auto;
-  min-height:600px;
+  min-height: 600px;
   @media (max-width: ${sm}px) {
     width: 90%;
   }
