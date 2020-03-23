@@ -7,7 +7,7 @@ export const StylesCard = styled.div`
   width: 380px;
   background: white;
   height: 300px;
-  margin: 20px 40px 20px 0px;
+  margin: 20px;
 
   @media (max-width: ${md}px) {
     margin: 20px 0px;
@@ -60,6 +60,7 @@ export const CardDescricao = styled.div`
   width: 75%;
   margin: auto;
   min-height: 600px;
+  word-break: break-all;
   @media (max-width: ${sm}px) {
     width: 90%;
   }
