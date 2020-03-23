@@ -11,8 +11,9 @@ export default function MinhasReceitas() {
   const dispatch = useDispatch();
   const recipes = useSelector(state => state.recipe.myRecipes);
   useEffect(() => {
-    dispatch(getMyRecipesRequest(token,user.id));
-  }, [dispatch, token, user.id]);
+    dispatch(getMyRecipesRequest(token, user.id));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return (
     <>
       <Title>

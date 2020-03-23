@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import {} from "styled-components";
-import { lg, xl } from "../../../styles/global";
+import { xl } from "../../../styles/global";
 
 export default styled.div`
   /* min-height: 100vh; */
@@ -10,8 +9,5 @@ export default styled.div`
   flex-wrap: wrap;
   @media (max-width: ${xl}px) {
     justify-content: space-evenly;
-
-
   }
-
 `;

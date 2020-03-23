@@ -8,7 +8,9 @@ import {
   getAllSuccess,
   getOneSuccess,
   addRecipeSuccess,
-  getMyRecipesSuccess
+  getMyRecipesSuccess,
+  updateRecipeSuccess,
+  deleteRecipeSuccess
 } from "./actions";
 export function* getAll({ payload }) {
   try {
@@ -69,7 +71,7 @@ export function* updateRecipe({ payload }) {
     const { data } = yield call(api.apiRecipe.put, `recipe/${id}/`, recipe, {
       headers: { Authorization: "Token " + token }
     });
-    yield put(addRecipeSuccess(data));
+    yield put(updateRecipeSuccess(data));
     history.push("/minhas-receitas");
   } catch (erro) {
     toast.error("Erro na requisição");
@@ -82,7 +84,7 @@ export function* deleteRecipe({ payload }) {
     const { data } = yield call(api.apiRecipe.delete, "recipe/" + recipe.id, {
       headers: { Authorization: "Token " + token }
     });
-    yield put(addRecipeSuccess(data));
+    yield put(deleteRecipeSuccess(data));
     yield put(getOneSuccess({}));
     history.push("/minhas-receitas");
   } catch (erro) {

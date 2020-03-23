@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 import Title from "../../styles/title";
 import Section from "../../components/default/section/SectionDefault";
@@ -16,9 +16,6 @@ export default function Descricao() {
   const { description, title, category } = useSelector(
     state => state.recipe.selectedRecipe
   );
-  // if (category === undefined) {
-  //   history.push("/receitas");
-  // }
   return (
     <>
       <Title>

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { singOut } from "../../../store/modules/auth/actions";
 import { getOneRequest } from "../../../store/modules/recipe/actions";
 import StylesNavBar from "./styles";
-import swal from 'sweetalert';
+import swal from "sweetalert";
 
 export default function NavBar() {
   let { user } = useSelector(state => state.user);
@@ -14,14 +14,12 @@ export default function NavBar() {
   function handleSingOut() {
     swal({
       title: "Tem certeza que deseja Sair ?",
-      buttons:{Cancelar:true,Descartar:"Sair"},
-    })
-    .then((willDelete) => {
-      if (willDelete === "Sair") {
+      buttons: { false: "Cancelar", true: "Sair" }
+    }).then(willDelete => {
+      if (willDelete === "true") {
         dispatch(singOut());
       }
     });
-    
   }
   function handleGetOne(token, id) {
     dispatch(getOneRequest(token, id));

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Form } from "@rocketseat/unform";
 import { darken } from "polished";
-import { lg, md, sm, xl } from "./global";
+import { md, sm, xl } from "./global";
 
 export const StyleForm = styled(Form)`
   position: relative;
@@ -94,5 +94,4 @@ export const StyleForm = styled(Form)`
     font-size: 27px;
     cursor: pointer;
   }
-  
 `;

@@ -13,15 +13,15 @@ import { StyleForm } from "../../styles/form";
 import swal from "sweetalert";
 let schema = Yup.object().shape({
   title: Yup.string().required("Campo obrigatório"),
-  category: Yup.string().required("Campo obrigatório"),
-  description: Yup.string().required("Campo obrigatório"),
-  id: Yup.string()
+  description: Yup.string().required("Campo obrigatório")
 });
 export default function Form() {
   let { token } = useSelector(state => state.auth);
   let { user } = useSelector(state => state.user);
   let { selectedRecipe } = useSelector(state => state.recipe);
-
+  const [category, setCategory] = useState(
+    selectedRecipe.category !== undefined ? selectedRecipe.category.id : ""
+  );
   const [options, setOptions] = useState([]);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -38,7 +38,7 @@ export default function Form() {
       );
     });
   }, [token]);
-  function handleSubmit({ title, category, description }, { resetForm }) {
+  function handleSubmit({ title, description }, { resetForm }) {
     let recipe = {
       title,
       category,
@@ -52,17 +52,15 @@ export default function Form() {
     }
     resetForm();
   }
-  function handleDelete({ resetForm }) {
+  function handleDelete() {
     swal({
       title: "Tem certeza que deseja Excluir ?",
-      buttons: { Cancelar: "Cancelar", Descartar: "Excluir" }
+      buttons: { false: "Cancelar", true: "Excluir" }
     }).then(willDelete => {
-      if (willDelete === "Excluir") {
+      if (willDelete === "true") {
         dispatch(deleteRecipeRequest(token, selectedRecipe));
       }
     });
-
-    // resetForm();
   }
   return (
     <StyleForm
@@ -78,11 +76,26 @@ export default function Form() {
           <Input name="title" type="text" placeholder={"Nome da receita"} />
         </div>
         <div className="col-xl-7 col-md-8 col-12">
-          <Select
-            options={options}
+          <select
+            required
             name="category"
-            placeholder={"Escolha a categoria da receita"}
-          />
+            value={category}
+            onChange={event => {
+              setCategory(event.target.value);
+            }}
+          >
+            <option value="" disabled hidden>
+              Escolha a categoria da receita
+            </option>
+            {options.map((category, index) => {
+              return (
+                <option value={category.id} key={index}>
+                  {category.name}
+                </option>
+              );
+            })}
+          </select>
+
           <FaCaretDown />
         </div>
         <div className="col-12">
@@ -91,7 +104,7 @@ export default function Form() {
             multiline
             type="text"
             label={"Descrição"}
-            placeholder={`°\n°\n°\n°\n°`}
+            placeholder={``}
           />
         </div>
         <button type="submit">Criar Receita</button>

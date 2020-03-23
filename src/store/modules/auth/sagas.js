@@ -3,15 +3,15 @@ import { takeLatest, call, put, all } from "redux-saga/effects";
 import history from "../../../service/history";
 import api from "../../../service/api";
 import { toast } from "react-toastify";
-import { singInSuccess, singFailure} from "./actions";
+import { singInSuccess, singFailure } from "./actions";
 
 export function* signIn({ payload }) {
   try {
     const { email, password } = payload;
 
     const response = yield call(api.apiUser.post, "authentication/", {
-      "username":email,
-      "password":password
+      username: email,
+      password: password
     });
 
     const { token, user } = {
@@ -26,8 +26,6 @@ export function* signIn({ payload }) {
   }
 }
 export function singOut() {
-
-  
   history.push("/");
 }
 export default all([

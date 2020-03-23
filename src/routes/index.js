@@ -20,14 +20,25 @@ export default function Routes(props) {
       <Route path="/minhas-receitas" component={MinhasReceitas} exact isPrivate>
         {props.children}
       </Route>
-      <Route path="/descricao" component={Descricao} exact isPrivate description = {true}>
+      <Route
+        path="/descricao"
+        component={Descricao}
+        exact
+        isPrivate
+        description={true}
+      >
         {props.children}
       </Route>
-      <Route path="/adicionar-receita" component={AdicionarReceitas} exact isPrivate>
+      <Route
+        path="/adicionar-receita"
+        component={AdicionarReceitas}
+        exact
+        isPrivate
+      >
         {props.children}
       </Route>
       <Route path="*">
-        <Redirect to="/receitas" />
+        <Redirect to="/" />
       </Route>
     </Switch>
   );
