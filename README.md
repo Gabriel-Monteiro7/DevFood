@@ -1,7 +1,7 @@
 # Desafio Front-end / DevFood 
 
 >*link:*  [https:/devfood.netlify.com/](https://devfood.netlify.com/)
-/
+
 A aplicação tem a premissa de ser um ​ site de receitas​ onde você, como um
 usuário, pode:
 
