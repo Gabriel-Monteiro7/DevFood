@@ -26,10 +26,7 @@ export const GlobalStyle = createGlobalStyle`
         
         cursor: pointer;
     }
-    .btn,button{
-        outline:none;
-        border-radius:5px;
-    }
+    
     }
     body{
         -webkit-font-smoothing: antialiased !important;
@@ -55,4 +52,62 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
     background-color: #F5F5F5;
 }
+.swal-footer {
+    display: flex;
+    justify-content: space-around;
+    padding:0px;
+    margin:10px 0px;
+    .swal-button{
+        border-radius: 2px;
+        padding: 6px 25px;
+        background: transparent;
+        &:hover,&:active{
+        background: transparent;
+      }
+    }
+    .swal-button--Descartar {
+      color: #6e6e6e;
+      &:hover{
+        color: #6e6e6e;
+      }
+    }
+    .swal-button--Cancelar {
+
+        color: #f58324;
+    &:hover,&:active{
+
+        color: #f58324;
+    }
+    }
+  }
+
+  .swal-modal {
+    
+    .swal-title {
+        font-size: 17px;
+    font-weight: normal;
+        margin: 0px 20px;
+    border-bottom: 1px solid;
+      padding: 25px 16px;
+    }
+  }
+  .btn,button{
+        outline:0 !important;
+        border-radius:5px;
+        &:active:focus{
+            outline:0 !important;
+            border:0;
+        }
+    }
+    .link {
+    float:right;
+    cursor:pointer;
+    text-decoration: underline;
+    text-align:end;
+    &:hover {
+      color: #f58324;
+      text-decoration: underline;
+      opacity: 0.8;
+    }
+  }
 `;

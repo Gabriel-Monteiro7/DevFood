@@ -3,11 +3,8 @@ import { Input } from "@rocketseat/unform";
 import * as Yup from "yup";
 import { StyleForm } from "../../styles/formLogin";
 import uuid from "react-uuid";
-// import {
-//   addTaskRequest,
-//   updateTaskRequest
-// } from "../../store/modules/task/actions";
-// import { useDispatch, useSelector } from "react-redux";
+import { singInRequest } from "../../store/modules/auth/actions";
+import { useDispatch, useSelector } from "react-redux";
 let schema = Yup.object().shape({
   email: Yup.string()
     .email()
@@ -16,20 +13,12 @@ let schema = Yup.object().shape({
 });
 
 export default function Form({ email, senha }) {
-  // let { selectedTasks } = useSelector(state => state.task);
-  // const dispatch = useDispatch();
+  let { user } = useSelector(state => state.user);
+  let { signed,loading  } = useSelector(state => state.auth);
+  const dispatch = useDispatch();
   function handleSubmit({ email, senha }, { resetForm }) {
-    let task = {
-      senha,
-      email
-    };
-    if (task.id !== undefined) {
-      // dispatch(updateTaskRequest(task));
-    } else {
-      task.id = uuid();
-      // dispatch(addTaskRequest(task));
-    }
-    resetForm();
+    dispatch(singInRequest(email, senha));
+    // resetForm();
   }
   return (
     <StyleForm className="row" schema={schema} onSubmit={handleSubmit}>
@@ -44,7 +33,7 @@ export default function Form({ email, senha }) {
       <div className="col-12">
         <Input name="senha" type="password" label={"Senha"} />
       </div>
-      <button type="submit">Entrar</button>
+      <button type="submit">{loading ? "Carregando..." : "Entrar"}</button>
     </StyleForm>
   );
 }

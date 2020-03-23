@@ -7,14 +7,18 @@ export const StylesCard = styled.div`
   width: 380px;
   background: white;
   height: 300px;
-  margin: 20px 0px;
+  margin:20px 40px 20px 0px;
+  
   @media (max-width: ${md}px) {
-    width: 300px;
+    margin: 20px 0px;
+    width: 260px;
     height: 220px;
   }
 `;
 export const Imagem = styled.div`
-  background-image: url(https://blog.novasafra.com.br/wp-content/uploads/2018/03/comida-arabe-780x450.jpg);
+  background-image: ${props => (props.image !== undefined ? props.image : "")};
+  background-size: cover;
+  background-position: center;
   height: 40%;
   border-radius: 8px 8px 0px 0px;
   padding: 2px 15px;
@@ -25,30 +29,20 @@ export const Imagem = styled.div`
 `;
 export const Body = styled.div`
   padding: 15px;
-  display: flex;
   word-break: break-all;
-  flex-direction: column;
-  justify-content: space-between;
   height: 60%;
   color: #267d9a;
-  span,
-  a {
+  .categoria,
+  a,.link{
     color: #f58324;
   }
-  span {
+  .categoria{
     font-weight: bold;
     /* font-size; */
   }
-  a {
-    text-decoration: underline;
-    margin: 0px 0px 0px auto;
-    &:hover {
-      color: #f58324;
-      text-decoration: underline;
-      opacity: 0.8;
-    }
-  }
+  
   p {
+    height:70%;
     font-size: 15px;
     margin: 0px;
   }
@@ -63,8 +57,9 @@ export const CardDescricao = styled.div`
   background: white;
   width: 75%;
   margin: auto;
+  min-height:600px;
   @media (max-width: ${sm}px) {
-    width: 100%;
+    width: 90%;
   }
 `;
 export const BodyDescricao = styled.div`

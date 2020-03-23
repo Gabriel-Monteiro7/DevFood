@@ -8,7 +8,7 @@ export default styled.nav`
   border-bottom: 10px #267d9a solid;
   padding: 12px 0px;
   a,
-  .navbar-toggler {
+  .navbar-toggler,.nav-link {
     color: white;
     &:hover {
       color: white;
@@ -18,6 +18,12 @@ export default styled.nav`
     font-weight: bold;
     transition: 0.3s ease-in-out;
     margin: 0px 3px;
+  }
+  .btn-event,a{
+    cursor:pointer;
+    &:hover{
+      opacity:0.9;
+    }
   }
   .navbar-brand {
     font-size: 25px;
@@ -45,7 +51,7 @@ export default styled.nav`
     margin: 0px;
   }
   img {
-    height: 45px;
+    height: 41px;
     margin-right: 15px;
     border-radius: 100%;
   }

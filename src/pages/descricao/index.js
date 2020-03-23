@@ -1,15 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import Title from "../../styles/title";
 import Section from "../../components/default/section/SectionDefault";
 import { FaArrowLeft } from "react-icons/all";
 import history from "../../service/history";
+
 import {
   CardDescricao,
   ImagemDescricao,
   BodyDescricao
 } from "../../components/default/card/styles";
+import { useSelector } from "react-redux";
+
 export default function Descricao() {
+  const { description, title, category } = useSelector(
+    state => state.recipe.selectedRecipe
+  );
+  // if (category === undefined) {
+  //   history.push("/receitas");
+  // }
   return (
     <>
       <Title>
@@ -22,23 +31,14 @@ export default function Descricao() {
           <FaArrowLeft size={9} />
           Voltar
         </span>
-        <span>Descrição</span>
+        <span className="descricao">{title}</span>
       </Title>
       <Section>
         <CardDescricao>
-          <ImagemDescricao />
+          <ImagemDescricao image={`url(${category.image || ""})`} />
           <BodyDescricao>
             <span>Descrição</span>
-            <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has Lorem
-              Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-            </p>
+            <p>{description}</p>
           </BodyDescricao>
         </CardDescricao>
       </Section>

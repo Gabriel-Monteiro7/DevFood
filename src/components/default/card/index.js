@@ -1,31 +1,69 @@
 import React from "react";
 
-import { StylesCard, Imagem, Body,BodyNewCard } from "./styles";
+import { StylesCard, Imagem, Body, BodyNewCard } from "./styles";
 import { Link } from "react-router-dom";
-import {FaPlus} from 'react-icons/all'
-export default function Card({ page, novo = false }) {
+import { FaPlus } from "react-icons/all";
+import { useDispatch, useSelector } from "react-redux";
+import { getOneRequest } from "../../../store/modules/recipe/actions";
+export default function Card({
+  page,
+  newCard = false,
+  category = { image: "" },
+  title,
+  description,
+  id
+}) {
+  const { token } = useSelector(state => state.auth);
+  const dispatch = useDispatch();
+  function handleGetOne(token, id) {
+    dispatch(getOneRequest(token, id));
+  }
   return (
     <StylesCard>
-      {novo ? (
+      {newCard ? (
         <BodyNewCard>
-          <FaPlus size={50}/>
-          <a>Adicionar Receita</a>
+          <FaPlus size={50} />
+          <span
+            className="link"
+            onClick={() => {
+              handleGetOne(token, null);
+            }}
+          >
+            Adicionar Receita
+          </span>
         </BodyNewCard>
       ) : (
         <>
-          <Imagem>
-            <span>Pizza</span>
+          <Imagem image={`url(${category.image})`}>
+            <span>
+              {title.length > 70 ? title.substring(0, 70) + "..." : title}
+            </span>
           </Imagem>
           <Body>
-            <span>Calabresa</span>
+            <span className="categoria">{category.name}</span>
             <p>
-              dfgdfgggggggggggggggasdasdasggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg
-              dfgdfgdfgdfgdfgdfgdf{" "}
+              {description.length > 200
+                ? description.substring(0, 205) + "..."
+                : description}
             </p>
             {page === "receitas" ? (
-              <Link to={"/descricao"}>Ver Receita</Link>
+              <span
+                className="link"
+                onClick={() => {
+                  handleGetOne(token, { update: false, value: id });
+                }}
+              >
+                Ver Receita
+              </span>
             ) : (
-              <Link to={"/editar"}>Editar</Link>
+              <span
+                className="link"
+                onClick={() => {
+                  handleGetOne(token, { update: true, value: id });
+                }}
+              >
+                Editar
+              </span>
             )}
           </Body>
         </>
