@@ -1,8 +1,7 @@
+# Desafio Front-end / DevFood 
 
-# Desafio Front-end / DevFood
-
->*link:*  [https://devfood.netlify.com/](https://devfood.netlify.com/)
-
+>*link:*  [https:/devfood.netlify.com/](https://devfood.netlify.com/)
+/
 A aplicação tem a premissa de ser um ​ site de receitas​ onde você, como um
 usuário, pode:
 
@@ -31,7 +30,7 @@ protótipo
     	2.5. Editar receita
     	2.6. Deletar receita
     	2.7. Listar minhas receitas 
-    Por fim, vale ressaltar que a aplicação deve ser desenvolvida em ​ react js ​ e o código deve ser colocado no ​ github ​ .
+   Por fim, vale ressaltar que a aplicação deve ser desenvolvida em ​ React js​ e o código deve ser colocado no ​Github ​ .
 
 ## Comentários
 
