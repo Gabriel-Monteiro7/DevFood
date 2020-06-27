@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { md } from "../../../styles/global";
 
-export default styled.nav`
+export const Nav = styled.nav`
   z-index: 1;
   background: #f58324 !important;
   width: 100%;
@@ -73,5 +73,15 @@ export default styled.nav`
     img {
       margin-right: 0px;
     }
+  }
+`;
+export const Image = styled.div`
+  border-radius: 50%;
+  background-color: #267d9a;
+  height: 35px;
+  width: 35px;
+  margin-right: 10px;
+  @media (max-width: ${md}px) {
+    margin-right: 0px;
   }
 `;

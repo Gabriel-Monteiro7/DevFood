@@ -1,10 +1,10 @@
-import axios from 'axios'
+import axios from "axios";
 
 const apiRecipe = axios.create({
-    baseURL:'https://receitas.devari.com.br/api/v1/'
-})
+  baseURL: "https://api-java-spring-boot.herokuapp.com/api",
+});
 const apiUser = axios.create({
-    baseURL:'https://receitas.devari.com.br/'
-})
-const api = {apiRecipe,apiUser}
+  baseURL: "http://apicadastrouser.herokuapp.com",
+});
+const api = { apiRecipe, apiUser };
 export default api;

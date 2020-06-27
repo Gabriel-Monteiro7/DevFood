@@ -5,7 +5,6 @@ import Route from "./Route";
 import Receitas from "../pages/receitas";
 
 import Descricao from "../pages/descricao";
-import MinhasReceitas from "../pages/minhasReceitas";
 import AdicionarReceitas from "../pages/adicionarReceita";
 import Login from "../pages/login";
 export default function Routes(props) {
@@ -15,9 +14,6 @@ export default function Routes(props) {
         {props.children}
       </Route>
       <Route path="/receitas" component={Receitas} exact isPrivate>
-        {props.children}
-      </Route>
-      <Route path="/minhas-receitas" component={MinhasReceitas} exact isPrivate>
         {props.children}
       </Route>
       <Route

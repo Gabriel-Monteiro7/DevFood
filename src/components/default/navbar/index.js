@@ -4,18 +4,18 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { singOut } from "../../../store/modules/auth/actions";
 import { getOneRequest } from "../../../store/modules/recipe/actions";
-import StylesNavBar from "./styles";
+import { Nav, Image } from "./styles";
 import swal from "sweetalert";
 
 export default function NavBar() {
-  let { user } = useSelector(state => state.user);
-  let { signed, token } = useSelector(state => state.auth);
+  let { user } = useSelector((state) => state.user);
+  let { signed, token } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   function handleSingOut() {
     swal({
       title: "Tem certeza que deseja sair ?",
-      buttons: { false: "Cancelar", true: "sair" }
-    }).then(willDelete => {
+      buttons: { false: "Cancelar", true: "sair" },
+    }).then((willDelete) => {
       if (willDelete === "true") {
         dispatch(singOut());
       }
@@ -25,7 +25,7 @@ export default function NavBar() {
     dispatch(getOneRequest(token, id));
   }
   return (
-    <StylesNavBar className="navbar navbar-expand-lg">
+    <Nav className="navbar navbar-expand-lg">
       <div className="container-fluid px-md-5 px-2">
         <Link className="navbar-brand" to="/receitas">
           <span>DEV</span>food
@@ -51,11 +51,6 @@ export default function NavBar() {
                   Receitas
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/minhas-receitas">
-                  Minhas Receitas
-                </Link>
-              </li>
 
               <li className="nav-item">
                 <span
@@ -69,8 +64,8 @@ export default function NavBar() {
               </li>
 
               <li className="nav-item user">
-                <span className="nav-link">{user.name}</span>
-                <img alt="Avatar do usuario" src={user.image} />
+                <span className="nav-link">{user.nome}</span>
+                <Image src={user.image} />
                 <hr />
                 <span className="nav-link btn-event" onClick={handleSingOut}>
                   Sair
@@ -80,6 +75,6 @@ export default function NavBar() {
           </div>
         )}
       </div>
-    </StylesNavBar>
+    </Nav>
   );
 }
