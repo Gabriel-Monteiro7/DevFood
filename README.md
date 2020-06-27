@@ -2,8 +2,11 @@
 # DevFood 
 
 >*link:*  [https:/devfood.netlify.com/](https://devfood.netlify.com/)
+>
 >*Dados para logar:*
+>
 >*Email:* gabriel@gmail.com
+>
 >*Senha:* senha123
 
 A aplicação tem a premissa de ser um ​ site de receitas​ onde você, como um
@@ -31,16 +34,16 @@ usuário, pode:
 
 ---
 ### Descrição
-![enter image description here](https://github.com/Gabriel-Monteiro7/NextLevelWeek/blob/master/.github/description.png)
+![enter image description here](https://github.com/Gabriel-Monteiro7/DevFood/blob/master/.github/description.png)
 
 ---
 
-## [](<[https://github.com/Gabriel-Monteiro7/NextLevelWeek](https://github.com/Gabriel-Monteiro7/NextLevelWeek)#tecnologias>)Tecnologias utilizadas
+## []([https://github.com/Gabriel-Monteiro7/DevFood](https://github.com/Gabriel-Monteiro7/DevFood)#tecnologias>)Tecnologias utilizadas
 
 Para o desenvolvimento do projeto foi utilizada as seguintes tecnologias:
 
 - :nail_care:  **Styled Components** — Tecnologia para componentizar estilização CSS no React através do Javascript
-- :atom_symbol:  **React Js** — Livraria Javascript para construção de interfaces;
+- :atom_symbol:  **React Js(Ts)** — Livraria Javascript para construção de interfaces;
 - :atom_symbol:  **React Toastify** — Permite adicionar notificações ao seu aplicativo com facilidade.
 - :atom_symbol:  **React Router Dom** — Roteamento e navegação para aplicações  que utilizam React Js
 -   :lock:  **Yup** — É um construtor de esquema JavaScript para análise e validação de valor.
