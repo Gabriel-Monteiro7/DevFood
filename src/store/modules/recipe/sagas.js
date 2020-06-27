@@ -8,7 +8,6 @@ import {
   getAllSuccess,
   getOneSuccess,
   addRecipeSuccess,
-  getMyRecipesSuccess,
   updateRecipeSuccess,
   deleteRecipeSuccess,
 } from "./actions";
@@ -25,7 +24,7 @@ export function* getAll({ payload }) {
 }
 export function* getOne({ payload }) {
   try {
-    const { token, id } = payload;
+    const { id } = payload;
     if (id === null) {
       if (history.location.pathname !== "/adicionar-receita")
         yield put(getOneSuccess(null));
@@ -45,7 +44,7 @@ export function* getOne({ payload }) {
 }
 export function* addRecipe({ payload }) {
   try {
-    const { token, recipe } = payload;
+    const { recipe } = payload;
     const { data } = yield call(api.apiRecipe.post, "save/", recipe);
     yield put(addRecipeSuccess(data));
     toast.success("Receita salva com sucesso");
@@ -56,7 +55,7 @@ export function* addRecipe({ payload }) {
 }
 export function* updateRecipe({ payload }) {
   try {
-    const { token, recipe, id } = payload;
+    const { recipe, id } = payload;
     const { data } = yield call(api.apiRecipe.put, `/${id}/`, recipe);
     yield put(updateRecipeSuccess(data));
     history.push("/receitas");
@@ -67,8 +66,7 @@ export function* updateRecipe({ payload }) {
 
 export function* deleteRecipe({ payload }) {
   try {
-    const { token, recipe } = payload;
-    const { data } = yield call(api.apiRecipe.delete, "/" + recipe.id);
+    const { recipe } = payload;
     yield put(deleteRecipeSuccess(recipe));
     yield put(getOneSuccess(null));
     history.push("/receitas");

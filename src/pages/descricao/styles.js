@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { sm } from "../../styles/global";
 import { FiEdit3 } from "react-icons/all";
 export const ButtonEdit = styled.button`
   position: absolute;

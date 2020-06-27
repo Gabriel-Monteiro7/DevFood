@@ -1,9 +1,8 @@
 import { Input } from "@rocketseat/unform";
-import React, { useEffect, useState } from "react";
-import { FaCaretDown, GoTrashcan } from "react-icons/all";
+import React from "react";
+import { GoTrashcan } from "react-icons/all";
 import { useDispatch, useSelector } from "react-redux";
 import * as Yup from "yup";
-import api from "../../service/api";
 import {
   addRecipeRequest,
   deleteRecipeRequest,
