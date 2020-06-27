@@ -9,15 +9,16 @@ export function* signIn({ payload }) {
   try {
     const { email, password } = payload;
 
-    const response = yield call(api.apiUser.post, "authentication/", {
-      username: email,
-      password: password
+    const response = yield call(api.apiUser.post, "/session", {
+      email,
+      password,
     });
+    const { token } = response.data;
 
-    const { token, user } = {
-      token: response.data.token,
-      user: response.data
-    };
+    const responseUser = yield call(api.apiUser.get, "/perfil", {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    const user = responseUser.data[0];
     yield put(singInSuccess(token, user));
     history.push("/receitas");
   } catch (erro) {
@@ -30,5 +31,5 @@ export function singOut() {
 }
 export default all([
   takeLatest("@auth/SIGN_IN_REQUEST", signIn),
-  takeLatest("@auth/SIGN_OUT", singOut)
+  takeLatest("@auth/SIGN_OUT", singOut),
 ]);

@@ -10,13 +10,13 @@ import {
   addRecipeSuccess,
   getMyRecipesSuccess,
   updateRecipeSuccess,
-  deleteRecipeSuccess
+  deleteRecipeSuccess,
 } from "./actions";
 export function* getAll({ payload }) {
   try {
     const { token } = payload;
-    const { data } = yield call(api.apiRecipe.get, "recipe/", {
-      headers: { Authorization: "Token " + token }
+    const { data } = yield call(api.apiRecipe.get, "/", {
+      headers: { Authorization: `Bearer ${token}` },
     });
     yield put(getAllSuccess(data));
   } catch (erro) {
@@ -31,9 +31,9 @@ export function* getOne({ payload }) {
         yield put(getOneSuccess(null));
       return history.push("/adicionar-receita");
     }
-    const { data } = yield call(api.apiRecipe.get, "recipe/" + id.value, {
-      headers: { Authorization: "Token " + token }
-    });
+    const { data } = yield call(api.apiRecipe.get, "/" + id.value);
+    console.log(data);
+
     yield put(getOneSuccess(data));
     if (id.update) {
       return history.push("/adicionar-receita");
@@ -43,25 +43,13 @@ export function* getOne({ payload }) {
     toast.error("Erro na requisição");
   }
 }
-export function* getMyRecipes({ payload }) {
-  try {
-    const { token, id } = payload;
-    const { data } = yield call(api.apiRecipe.get, "recipe?user=" + id, {
-      headers: { Authorization: "Token " + token }
-    });
-    yield put(getMyRecipesSuccess(data));
-  } catch (erro) {
-    toast.error("Erro na requisição");
-  }
-}
 export function* addRecipe({ payload }) {
   try {
     const { token, recipe } = payload;
-    const { data } = yield call(api.apiRecipe.post, "recipe/", recipe, {
-      headers: { Authorization: "Token " + token }
-    });
+    const { data } = yield call(api.apiRecipe.post, "save/", recipe);
     yield put(addRecipeSuccess(data));
-    history.push("/minhas-receitas");
+    toast.success("Receita salva com sucesso");
+    history.push("/receitas");
   } catch (erro) {
     toast.error("Erro na requisição");
   }
@@ -69,11 +57,9 @@ export function* addRecipe({ payload }) {
 export function* updateRecipe({ payload }) {
   try {
     const { token, recipe, id } = payload;
-    const { data } = yield call(api.apiRecipe.put, `recipe/${id}/`, recipe, {
-      headers: { Authorization: "Token " + token }
-    });
+    const { data } = yield call(api.apiRecipe.put, `/${id}/`, recipe);
     yield put(updateRecipeSuccess(data));
-    history.push("/minhas-receitas");
+    history.push("/receitas");
   } catch (erro) {
     toast.error("Erro na requisição");
   }
@@ -82,12 +68,11 @@ export function* updateRecipe({ payload }) {
 export function* deleteRecipe({ payload }) {
   try {
     const { token, recipe } = payload;
-    const { data } = yield call(api.apiRecipe.delete, "recipe/" + recipe.id, {
-      headers: { Authorization: "Token " + token }
-    });
-    yield put(deleteRecipeSuccess(data));
+    const { data } = yield call(api.apiRecipe.delete, "/" + recipe.id);
+    yield put(deleteRecipeSuccess(recipe));
     yield put(getOneSuccess(null));
-    history.push("/minhas-receitas");
+    history.push("/receitas");
+    toast.success("Receita deletada com sucesso");
   } catch (erro) {
     toast.error("Erro na requisição");
   }
@@ -95,8 +80,7 @@ export function* deleteRecipe({ payload }) {
 export default all([
   takeLatest("@recipe/GET_ALL_REQUEST", getAll),
   takeLatest("@recipe/GET_ONE_REQUEST", getOne),
-  takeLatest("@recipe/GET_MY_RECIPES_REQUEST", getMyRecipes),
   takeLatest("@recipe/ADD_RECIPE_REQUEST", addRecipe),
   takeLatest("@recipe/UPDATE_RECIPE_REQUEST", updateRecipe),
-  takeLatest("@recipe/DELETE_RECIPE_REQUEST", deleteRecipe)
+  takeLatest("@recipe/DELETE_RECIPE_REQUEST", deleteRecipe),
 ]);

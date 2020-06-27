@@ -8,22 +8,23 @@ export default styled.div`
   left: 0px;
   width: 100%;
   position: absolute;
-  padding: 15px 0px;
+  padding: 20px 0px;
   font-weight: bold;
   margin: 15px 0px;
+  min-height: 64px;
   span {
     color: #f58324;
   }
   .voltar {
     cursor: pointer;
     color: #267d9a;
-    font-size: 11px;
+    font-size: 12px;
     position: absolute;
     left: 49px;
+    top: 24px;
     @media (max-width: ${sm}px) {
       left: 0.5rem;
     }
-    top: 20px;
     svg {
       margin: 0px 5px;
     }

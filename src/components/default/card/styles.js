@@ -3,7 +3,7 @@ import {} from "styled-components";
 import { md, sm } from "../../../styles/global";
 
 export const StylesCard = styled.div`
-  border-radius: 8px;
+  border-radius: 4px;
   width: 380px;
   background: white;
   height: 300px;
@@ -14,14 +14,15 @@ export const StylesCard = styled.div`
     width: 260px;
     height: 220px;
   }
+  img {
+  }
 `;
 export const Imagem = styled.div`
-  background: ${props =>
-    props.image !== undefined ? `url(${props.image})` : "#424242"};
+  background: #424242;
   background-size: cover;
   background-position: center;
   height: 40%;
-  border-radius: 8px 8px 0px 0px;
+  border-radius: 4px 4px 0px 0px;
   padding: 2px 15px;
   color: white;
   display: flex;
@@ -33,6 +34,7 @@ export const Body = styled.div`
   word-break: break-all;
   height: 60%;
   color: #267d9a;
+  position: relative;
   .categoria,
   a,
   .link {
@@ -61,6 +63,8 @@ export const CardDescricao = styled.div`
   margin: auto;
   min-height: 600px;
   word-break: break-all;
+  border-radius: 6px;
+  position: relative;
   @media (max-width: ${sm}px) {
     width: 90%;
   }
@@ -89,7 +93,7 @@ export const BodyDescricao = styled.div`
   }
 `;
 export const ImagemDescricao = styled(Imagem)`
-  border-radius: 0px;
+  border-radius: 6px;
   height: 300px;
   @media (max-width: ${md}px) {
     height: 170px;
