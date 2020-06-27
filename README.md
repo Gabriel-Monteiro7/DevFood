@@ -1,6 +1,10 @@
-# Desafio Front-end / DevFood 
+
+# DevFood 
 
 >*link:*  [https:/devfood.netlify.com/](https://devfood.netlify.com/)
+>*Dados para logar:*
+>*Email:* gabriel@gmail.com
+>*Senha:* senha123
 
 A aplicação tem a premissa de ser um ​ site de receitas​ onde você, como um
 usuário, pode:
@@ -9,40 +13,42 @@ usuário, pode:
  - Visualizar todas as receitas (se estiver autenticado)
  - Criar, editar e deletar suas próprias receitas (se estiver autenticado)
 
-**Obs**: ​ 
+### Prévia
+![preview](https://github.com/Gabriel-Monteiro7/DevFood/blob/master/.github/preview.gif)
 
- - Acesse esse link no computador, para melhor visualização.
- - Clique 2 vezes na página e descubra onde possui navegação.
- - Não se prenda 100% ao protótipo e fique livre para realizar ajustes na interface que você julgar necessário.
- - Caso encontre problemas na API, entre em contato.
- -  Sinta-se à vontade para utilizar as bibliotecas que desejar e precisar
-(gerenciamento de estado, componentes prontos, navegação, etc).
+---
+### Login
+![Home](https://github.com/Gabriel-Monteiro7/DevFood/blob/master/.github/Login.png)
 
-Resumindo, você precisa para completar o desafio:
- 1. Criar a interface proposta baseada no link do 
-protótipo
- 2. Desenvolver as seguintes funcionalidades:
-	
-		2.1. Autenticação
-    	2.2. Logout
-    	2.3. Listar receitas
-    	2.4. Criar receita
-    	2.5. Editar receita
-    	2.6. Deletar receita
-    	2.7. Listar minhas receitas 
-   Por fim, vale ressaltar que a aplicação deve ser desenvolvida em ​ React js​ e o código deve ser colocado no ​Github ​ .
+---
+### Home
+![Home](https://github.com/Gabriel-Monteiro7/DevFood/blob/master/.github/Home.png)
+
+---
+
+### Registro
+![NewPoint](https://github.com/Gabriel-Monteiro7/DevFood/blob/master/.github/register.png)
+
+---
+### Descrição
+![enter image description here](https://github.com/Gabriel-Monteiro7/NextLevelWeek/blob/master/.github/description.png)
+
+---
+
+## [](<[https://github.com/Gabriel-Monteiro7/NextLevelWeek](https://github.com/Gabriel-Monteiro7/NextLevelWeek)#tecnologias>)Tecnologias utilizadas
+
+Para o desenvolvimento do projeto foi utilizada as seguintes tecnologias:
+
+- :nail_care:  **Styled Components** — Tecnologia para componentizar estilização CSS no React através do Javascript
+- :atom_symbol:  **React Js** — Livraria Javascript para construção de interfaces;
+- :atom_symbol:  **React Toastify** — Permite adicionar notificações ao seu aplicativo com facilidade.
+- :atom_symbol:  **React Router Dom** — Roteamento e navegação para aplicações  que utilizam React Js
+-   :lock:  **Yup** — É um construtor de esquema JavaScript para análise e validação de valor.
+-  :framed_picture:  **Lottie** —  É uma biblioteca que analisa animações do Adobe After Effects exportadas como json e as cria nativamente no celular e na web!
 
 ## Comentários
+O sistema foi desenvolvido com o intuito de melhorar o entendimento das biblioteca React Js. Usando Hooks, Styled Components e diversas outras tecnologias para construir sua estrutura. Este é um projeto pessoal, logo pode-se ter alguns erros.
 
-Tecnologias utilizadas :
+## :man_technologist: Autor
 
- - React Js
- - Redux Saga
- - Yup
- - Styled Components
- - Immer
- - React Toastify
-
-## Autor
-
--   **Vinicius Gabriel Vidal Monteiro**  -  [GitHub](https://github.com/Gabriel-Monteiro7)  - Email:  [gabrielmont713@gmail.com](mailto:gabrielmont713@gmail.com)
+-   **Gabriel Monteiro**  -  [GitHub](https://github.com/Gabriel-Monteiro7)  - Email:  [gabrielmont713@gmail.com](mailto:gabrielmont713@gmail.com)
